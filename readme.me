@@ -1,0 +1,22 @@
+1.在网上下载书中源代码，点击打开链接
+
+2.解压文件：tar -zxvf *.tar.gz
+
+3.cd apue.3e/
+
+4.make
+在这个过程中，你会看到最后由于can,t find -lbsd而不能make成功，解决办法是添加libbsd.a的静态链接库  
+    sudo apt-get install libbsd-dev  
+
+5.make(again)
+
+6.在编译成功的基础上，我们进行安装apue.h文件及其对应的静态链接库libapue.a
+    sudo cp ./include/apue.h /usr/include/
+    sudo cp ./lib/libapue.a /usr/local/lib/
+为什么要将libapue.a移到/usr/local/lib中呢？原因是libapue.a是apue.h头文件中包含的所有函数及宏定义的具体实现，是一个静态链接库。
+
+查看ld.conf.d/libc.conf你会发现gcc在搜索链接库的时候默认会去搜索/usr/local/lib/中的文件，所以我们将其放在这里，一劳永逸。。。。（不过自己要知道哦）
+
+在CMakeLists.txt中加入
+    link_libraries(/usr/local/lib/libapue.a)
+        相当于"cc ls.c -o ls -lapue"中的"-lapue"

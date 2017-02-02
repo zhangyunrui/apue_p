@@ -1,0 +1,1 @@
+/usr/bin/cc  -g   CMakeFiles/apue.dir/ls.c.o  -o apue 
