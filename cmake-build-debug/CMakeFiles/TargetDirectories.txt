@@ -1,3 +1,0 @@
-/home/cloud/Desktop/git/apue_p/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/cloud/Desktop/git/apue_p/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/cloud/Desktop/git/apue_p/cmake-build-debug/CMakeFiles/apue_p.dir

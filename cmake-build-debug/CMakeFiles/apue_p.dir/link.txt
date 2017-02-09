@@ -1,1 +1,0 @@
-/usr/bin/cc  -g   CMakeFiles/apue_p.dir/ls.c.o  -o apue_p /usr/local/lib/libapue.a 
